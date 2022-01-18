@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Animated_checkbox</title>
+</head>
+<body>
+    <h1>Список продуктов</h1>
+    <div class="check-group">
+        <!-- создаём подпись и указываем, к какому элементу она относится -->
+        <label class="checkbox" for="checkbox01">
+
+            <!-- размещаем обычный чекбокс и задаём ему нужный класс -->
+            <!-- также указываем id, чтобы подпись смогла найти этот инбокс -->
+            <input class="checkbox__input" type="checkbox" id="checkbox01">
+
+            <!-- готовим виртуальное пространство для рисования -->
+            <svg class="checkbox__icon" viewBox="0 0 22 22">
+                <!-- рисуем красивую рамку чекбокса -->
+                <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                <!-- сразу делаем красивую галочку, но пока делаем её невидимой -->
+                <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+            </svg>
+        
+            <!-- подписываем наш чекбокс -->
+            <span class="checkbox__label">Хлеб</span>
+        </label>
+
+
+        <!-- создаём подпись и указываем, к какому элементу она относится -->
+        <label class="checkbox" for="checkbox02">
+
+            <!-- размещаем обычный чекбокс и задаём ему нужный класс -->
+            <!-- также указываем id, чтобы подпись смогла найти этот инбокс -->
+            <input class="checkbox__input" type="checkbox" id="checkbox02">
+
+            <!-- готовим виртуальное пространство для рисования -->
+            <svg class="checkbox__icon" viewBox="0 0 22 22">
+                <!-- рисуем красивую рамку чекбокса -->
+                <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                <!-- сразу делаем красивую галочку, но пока делаем её невидимой -->
+                <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+            </svg>
+        
+            <!-- подписываем наш чекбокс -->
+            <span class="checkbox__label">Молоко</span>
+        </label>
+
+
+        <!-- создаём подпись и указываем, к какому элементу она относится -->
+        <label class="checkbox" for="checkbox03">
+
+            <!-- размещаем обычный чекбокс и задаём ему нужный класс -->
+            <!-- также указываем id, чтобы подпись смогла найти этот инбокс -->
+            <input class="checkbox__input" type="checkbox" id="checkbox03">
+
+            <!-- готовим виртуальное пространство для рисования -->
+            <svg class="checkbox__icon" viewBox="0 0 22 22">
+                <!-- рисуем красивую рамку чекбокса -->
+                <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                <!-- сразу делаем красивую галочку, но пока делаем её невидимой -->
+                <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+            </svg>
+        
+            <!-- подписываем наш чекбокс -->
+            <span class="checkbox__label">Помидоры</span>
+        </label>
+ 
+ 
+        <!-- создаём подпись и указываем, к какому элементу она относится -->
+        <label class="checkbox" for="checkbox04">
+
+            <!-- размещаем обычный чекбокс и задаём ему нужный класс -->
+            <!-- также указываем id, чтобы подпись смогла найти этот инбокс -->
+            <input class="checkbox__input" type="checkbox" id="checkbox04">
+
+            <!-- готовим виртуальное пространство для рисования -->
+            <svg class="checkbox__icon" viewBox="0 0 22 22">
+                <!-- рисуем красивую рамку чекбокса -->
+                <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                <!-- сразу делаем красивую галочку, но пока делаем её невидимой -->
+                <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+            </svg>
+        
+            <!-- подписываем наш чекбокс -->
+            <span class="checkbox__label">Мясо</span>
+        </label>
+ 
+ 
+         <!-- создаём подпись и указываем, к какому элементу она относится -->
+         <label class="checkbox" for="checkbox05">
+
+            <!-- размещаем обычный чекбокс и задаём ему нужный класс -->
+            <!-- также указываем id, чтобы подпись смогла найти этот инбокс -->
+            <input class="checkbox__input" type="checkbox" id="checkbox05">
+
+            <!-- готовим виртуальное пространство для рисования -->
+            <svg class="checkbox__icon" viewBox="0 0 22 22">
+                <!-- рисуем красивую рамку чекбокса -->
+                <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+                <!-- сразу делаем красивую галочку, но пока делаем её невидимой -->
+                <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+            </svg>
+        
+            <!-- подписываем наш чекбокс -->
+            <span class="checkbox__label">Соус</span>
+        </label>
+        <div class="check-group__result">Выбрано:</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    margin: 2em;
+    background-color: #f0f0f0;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* настройки для группы чекбоксов */
+.check-group {
+    background-color: #fff;
+    min-width: 13rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 10, 0.2);
+    counter-reset: total;
+    counter-reset: checked;
+}
+
+/* делаем отступы внутри группы */
+/* Символ «больше» означает, что правило будет относиться к каким-то элементам, которые лежат внутри тега с классом .check-group.
+Звёздочка означает, что это правило относится ко всем элементам, которые лежат внутри.
+Плюс означает, что предыдущее правило применяется, только если предыдущий (то есть любой вложенный) и следующий (то есть тоже любой вложенный) элементы идут друг за другом.
+Вторая звёздочка означает, что следующий элемент тоже может быть любым. 
+
+*/
+.check-group > * + * {
+    margin-top: 0.75rem;
+}
+
+/* Современный CSS получил поддержку таких мини-переменных, которые могут считать количество отображённых элементов.
+Чтобы увеличить значение счётчика на единицу, используют команду  counter-increment. Используем её, чтобы посчитать сначала количество всех чекбоксов: */
+/* подсчитываем количество всех чекбоксов */
+.check-group .checkbox {
+    counter-increment: total;
+}
+
+/* считаем только отмеченные галочки */
+.check-group input[type=checkbox]:checked {
+    counter-increment: checked;
+  }
+
+/* настройка внешнего вида строки с результатом: */
+.check-group__result {
+    font-weight: bold;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* обрабатываем результат: */
+.check-group__result::after {
+    /* добавляем строку со значениями счётчиков */
+    content: counter(checked) " / " counter(total);
+    /* добавляем отступ слева */
+    padding-left: 1ch;
+}
+
+/* настройки для всего элемента с чекбоксом */
+.checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* отдельные настройки для самого чекбокса */
+.checkbox__input {
+    position: absolute;
+    width: 1.375em;
+    height: 1.375em;
+    /* делаем чекбокс непрозрачным, чтобы скрыть исходный элемент и заменить его потом нарисованным */
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* настройки для SVG-иконки */
+.checkbox__icon {
+    width: 1.375em;
+    height: 1.375em;
+    /* убираем ограничение по наименьшей ширине блока */
+    flex-shrink: 0;
+    /* разрешаем отображать содержимое за пределами блока */
+    overflow: visible;
+}
+
+/* общие настройки для нового чекбокса и галочки */
+.checkbox__icon .tick {
+    /* рисовать будем всё отрезками по 20 пикселей */
+    stroke-dasharray: 20px;
+    /* но сместим следующие отрезки тоже на 20 пикселей, чтобы получить сплошные линии */
+    stroke-dashoffset: 20px;
+    /* это даст нам плавную анимацию отрисовки галочки */
+    transition: stroke-dashoffset 0.2s ease-out;
+  }
+
+.checkbox__label {
+    margin-left: 0.5em;
+}
+
+/* включаем возможность поставить галочку */
+.checkbox__input:checked + .checkbox__icon .tick {
+    /* убираем смещение для отрезков, чтобы включить анимацию галочки */
+    stroke-dashoffset: 0;
+  }
